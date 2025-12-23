@@ -47,7 +47,7 @@ html {
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(217, 154, 160, 0.15), 0 10px 10px -5px rgba(217, 154, 160, 0.1);
 }
 
 /* Skill tags hover effect */
@@ -57,13 +57,28 @@ html {
 }
 
 .skill-tag:hover {
-    background: linear-gradient(to right, #ec4899, #fb923c);
+    background: linear-gradient(to right, #d99aa0, #a8968f);
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Active nav link */
-.nav-link.active {
-    color: #ec4899;
-    font-weight: 600;
+/* Nav link underline effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #d99aa0, #a8968f);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
